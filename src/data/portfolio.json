@@ -1,0 +1,121 @@
+{
+  "profile": {
+    "name": "Mustansar Maqsood",
+    "title": "DevOps Engineer",
+    "tagline": "Focused on building secure, scalable, and automated cloud infrastructure.",
+    "specialty": "Designing reliable systems on AWS, containerizing with Docker, and orchestrating with Kubernetes.",
+    "email": "contact@mustansar.dev",
+    "github": "https://github.com/mustansar",
+    "linkedin": "https://linkedin.com/in/mustansar"
+  },
+  "experience": [
+    {
+      "id": 1,
+      "title": "DevOps Engineer",
+      "company": "Obsyra Tech",
+      "startDate": "Feb 2025",
+      "endDate": "Present",
+      "highlights": [
+        "Optimizing CI/CD pipelines via GitHub Actions",
+        "Managing Kubernetes workloads",
+        "Implementing automated deployment processes",
+        "Monitoring and logging infrastructure"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "DevOps Engineer",
+      "company": "Avalon Innovations",
+      "startDate": "Dec 2023",
+      "endDate": "Present",
+      "highlights": [
+        "VPC architecture design and implementation",
+        "IAM least-privilege access policies",
+        "EC2 auto-scaling configurations",
+        "Infrastructure security hardening"
+      ]
+    }
+  ],
+  "skills": {
+    "cloudOrchestration": [
+      "AWS EC2",
+      "AWS VPC",
+      "AWS S3",
+      "AWS RDS",
+      "Kubernetes",
+      "Docker"
+    ],
+    "automationIaC": [
+      "Terraform",
+      "Ansible",
+      "GitHub Actions",
+      "CloudFormation"
+    ],
+    "securityNetworking": [
+      "IAM Management",
+      "Private Subnets",
+      "VPC Peering",
+      "Cisco Networking",
+      "SSL/TLS",
+      "Network Security Groups"
+    ],
+    "languages": [
+      "Python",
+      "Bash",
+      "YAML",
+      "HCL"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Networking Lab",
+      "description": "End-to-end VPC Peering implementation with 0% packet loss",
+      "tags": ["AWS", "VPC", "Networking"],
+      "metrics": "0% Packet Loss",
+      "icon": "Network",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "CI/CD Automation",
+      "description": "Every code push automatically deploys a live website to S3 via GitHub Actions",
+      "tags": ["GitHub Actions", "AWS S3", "CI/CD"],
+      "metrics": "Auto-Deploy",
+      "icon": "Zap",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "title": "Agentic AI for DevOps",
+      "description": "Local AI agent (Ollama/Gemma 3) built for infrastructure reasoning",
+      "tags": ["AI", "Ollama", "DevOps"],
+      "metrics": "Local LLM",
+      "icon": "Bot",
+      "link": "#"
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "name": "Cisco Network Technician",
+      "issuer": "Cisco",
+      "date": "2024",
+      "icon": "Award"
+    },
+    {
+      "id": 2,
+      "name": "Cisco Cybersecurity",
+      "issuer": "Cisco",
+      "date": "2024",
+      "icon": "Shield"
+    },
+    {
+      "id": 3,
+      "name": "Google AI",
+      "issuer": "Google",
+      "date": "2024",
+      "icon": "Brain"
+    }
+  ]
+}
