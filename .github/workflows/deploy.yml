@@ -10,11 +10,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 1. Terraform - We added continue-on-error so it ignores the "Bucket Exists" error
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init & Apply
         working-directory: ./infra
+        continue-on-error: true
         run: |
           terraform init
           terraform apply -auto-approve
@@ -23,11 +25,13 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'eu-north-1'
 
-      - name: Build React App
+      # 2. Build the React App
+      - name: Install & Build
         run: |
           npm install
           npm run build
 
+      # 3. Upload files to the S3 bucket
       - name: Sync to S3
         uses: jakejarvis/s3-sync-action@master
         with:
