@@ -2,12 +2,12 @@ provider "aws" {
   region = "eu-north-1"
 }
 
-# 1. Create the S3 Bucket
+# Reference your existing bucket
 resource "aws_s3_bucket" "portfolio" {
   bucket = "mustansar.haseebxbiz.dev"
 }
 
-# 2. Setup Static Web Hosting
+# Enable Static Web Hosting
 resource "aws_s3_bucket_website_configuration" "hosting" {
   bucket = aws_s3_bucket.portfolio.id
   index_document {
@@ -15,9 +15,21 @@ resource "aws_s3_bucket_website_configuration" "hosting" {
   }
 }
 
-# 3. Bucket Policy to make it public
-resource "aws_s3_bucket_policy" "public_read" {
+# IMPORTANT: This block removes the "Public Access Block" so the world can see it
+resource "aws_s3_bucket_public_access_block" "public_block" {
   bucket = aws_s3_bucket.portfolio.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
+}
+
+# This policy allows everyone to read the objects in the bucket
+resource "aws_s3_bucket_policy" "public_read_policy" {
+  bucket = aws_s3_bucket.portfolio.id
+  depends_on = [aws_s3_bucket_public_access_block.public_block]
+
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
